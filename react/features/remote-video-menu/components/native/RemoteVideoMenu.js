@@ -13,8 +13,6 @@ import { PrivateMessageButton } from '../../../chat';
 
 import { hideRemoteVideoMenu } from '../../actions';
 
-import KickButton from './KickButton';
-import MuteButton from './MuteButton';
 import PinButton from './PinButton';
 import styles from './styles';
 
@@ -93,8 +91,6 @@ class RemoteVideoMenu extends Component<Props> {
                         { this.props._participantDisplayName }
                     </Text>
                 </View>
-                <MuteButton { ...buttonProps } />
-                <KickButton { ...buttonProps } />
                 <PinButton { ...buttonProps } />
                 <PrivateMessageButton { ...buttonProps } />
             </BottomSheet>
