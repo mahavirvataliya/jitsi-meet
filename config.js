@@ -451,10 +451,10 @@ var config = {
     // Mainly privacy related settings
 
     // Disables all invite functions from the app (share, invite, dial out...etc)
-    // disableInviteFunctions: true,
+    disableInviteFunctions: true,
 
     // Disables storing the room name to the recents list
-    // doNotStoreRoom: true,
+    doNotStoreRoom: true,
 
     // Deployment specific URLs.
     // deploymentUrls: {
@@ -467,13 +467,13 @@ var config = {
     // },
 
     // Options related to the remote participant menu.
-    // remoteVideoMenu: {
-    //     // If set to true the 'Kick out' button will be disabled.
-    //     disableKick: true
-    // },
+    remoteVideoMenu: {
+        // If set to true the 'Kick out' button will be disabled.
+        disableKick: true
+    },
 
     // If set to true all muting operations of remote participants will be disabled.
-    // disableRemoteMute: true,
+    disableRemoteMute: true,
 
     // List of undocumented settings used in jitsi-meet
     /**

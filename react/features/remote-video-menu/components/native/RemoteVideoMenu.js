@@ -12,9 +12,6 @@ import { StyleType } from '../../../base/styles';
 import { PrivateMessageButton } from '../../../chat';
 
 import { hideRemoteVideoMenu } from '../../actions';
-
-import KickButton from './KickButton';
-import MuteButton from './MuteButton';
 import PinButton from './PinButton';
 import styles from './styles';
 
@@ -85,7 +82,7 @@ class RemoteVideoMenu extends Component<Props> {
      * @inheritdoc
      */
     render() {
-        const { _disableKick, _disableRemoteMute, participant } = this.props;
+        const { participant } = this.props;
         const buttonProps = {
             afterClick: this._onCancel,
             showLabel: true,
@@ -94,14 +91,6 @@ class RemoteVideoMenu extends Component<Props> {
         };
 
         const buttons = [];
-
-        if (!_disableRemoteMute) {
-            buttons.push(<MuteButton { ...buttonProps } />);
-        }
-
-        if (!_disableKick) {
-            buttons.push(<KickButton { ...buttonProps } />);
-        }
 
         buttons.push(<PinButton { ...buttonProps } />);
         buttons.push(<PrivateMessageButton { ...buttonProps } />);
