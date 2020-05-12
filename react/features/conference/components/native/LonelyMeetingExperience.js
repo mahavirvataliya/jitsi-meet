@@ -1,7 +1,7 @@
 // @flow
 
 import React, { PureComponent } from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { Text, View } from 'react-native';
 
 import { ColorSchemeRegistry } from '../../../base/color-scheme';
 import { connect } from '../../../base/redux';
@@ -11,7 +11,6 @@ import { getParticipantCount } from '../../../base/participants';
 import { doInvitePeople } from '../../../invite/actions.native';
 
 import styles from './styles';
-import { Icon, IconAddPeople } from '../../../base/icons';
 
 /**
  * Props type of the component.
@@ -65,7 +64,7 @@ class LonelyMeetingExperience extends PureComponent<Props> {
      * @inheritdoc
      */
     render() {
-        const { _isInviteFunctionsDiabled, _isLonelyMeeting, _styles, t } = this.props;
+        const { _isLonelyMeeting, _styles, t } = this.props;
 
         if (!_isLonelyMeeting) {
             return null;
@@ -80,26 +79,6 @@ class LonelyMeetingExperience extends PureComponent<Props> {
                     ] }>
                     { t('lonelyMeetingExperience.youAreAlone') }
                 </Text>
-                { !_isInviteFunctionsDiabled && (
-                    <TouchableOpacity
-                        onPress = { this._onPress }
-                        style = { [
-                            styles.lonelyButton,
-                            _styles.lonelyButton
-                        ] }>
-                        <Icon
-                            size = { 24 }
-                            src = { IconAddPeople }
-                            style = { styles.lonelyButtonComponents } />
-                        <Text
-                            style = { [
-                                styles.lonelyButtonComponents,
-                                _styles.lonelyMessage
-                            ] }>
-                            { t('lonelyMeetingExperience.button') }
-                        </Text>
-                    </TouchableOpacity>
-                ) }
             </View>
         );
     }
